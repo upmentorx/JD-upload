@@ -51,3 +51,4 @@ if not can_upload():
     st.info(f"Next upload available in {remaining} seconds.")
 
 
+
