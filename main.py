@@ -32,7 +32,7 @@ if uploaded_file is not None:
         if st.button("Upload PDF"):
             with st.spinner("Uploading your PDF..."):
                 file_bytes = uploaded_file.getvalue()
-                webhook_url = "https://hirednext.app.n8n.cloud/webhook-test/48ee35d3-75ef-430c-a734-d5971d3c5edc"  # Change this to your n8n webhook URL
+                webhook_url = "https://hirednext.app.n8n.cloud/webhook/48ee35d3-75ef-430c-a734-d5971d3c5edc"  # Change this to your n8n webhook URL
 
                 files = {"file": (uploaded_file.name, file_bytes, uploaded_file.type)}
                 try:
@@ -49,4 +49,5 @@ if uploaded_file is not None:
 if not can_upload():
     remaining = int(60 - (time.time() - st.session_state["last_upload_time"]))
     st.info(f"Next upload available in {remaining} seconds.")
+
 
